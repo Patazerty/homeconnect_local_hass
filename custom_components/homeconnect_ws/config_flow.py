@@ -220,6 +220,8 @@ class HomeConnectConfigFlow(ConfigFlow, domain=DOMAIN):
                     self.handler, appliance_id
                 )
 
+                _LOGGER.debug(f"PATADEBUG appliance_id={appliance_id} appliance_info={appliance_info} existing_entry={existing_entry}")
+
                 if not existing_entry or existing_entry.source == SOURCE_IGNORE:
                     brand = appliance_info["info"]["brand"]
                     appliance_type = appliance_info["info"]["type"]
